@@ -1,8 +1,10 @@
 # tap-lucid-scim
 
-`tap-lucid-scim` is a Singer tap for LucidSCIM.
+`tap-lucid-scim` is a Singer tap for LucidScim.
 
-Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
+Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps and [Lucid SCIM API reference](https://developer.lucid.co/scim/).
+
+<!--
 
 <!--
 
@@ -82,7 +84,7 @@ poetry install
 
 ### Create and Run Tests
 
-Create tests within the `tap_lucid_scim/tests` subfolder and
+Create tests within the `tests` subfolder and
   then run:
 
 ```bash

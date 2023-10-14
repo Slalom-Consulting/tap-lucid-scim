@@ -1,0 +1,116 @@
+{
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": ["string", "null"]
+      },
+      "schemas": {
+        "type": "array",
+        "items": {
+          "type": ["string", "null"]
+        }
+      },
+      "userName": {
+        "type": ["string", "null"]
+      },
+      "name": {
+        "type": "object",
+        "properties": {
+          "formatted": {
+            "type": ["string", "null"]
+          },
+          "givenName": {
+            "type": ["string", "null"]
+          },
+          "familyName": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "displayName": {
+        "type": ["string", "null"]
+      },
+      "emails": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": ["string", "null"]
+            },
+            "primary": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "groups": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "display": {
+              "type": ["string", "null"]
+            },
+            "value": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "urn:ietf:params:scim:schemas:extension:lucid:1.0:User": {
+        "type": "object",
+        "properties": {
+          "billingCode": {
+            "type": ["string", "null"]
+          },
+          "productLicenses": {
+            "type": "object",
+            "properties": {
+              "Lucidchart": {
+                "type": "boolean"
+              },
+              "Lucidspark": {
+                "type": "boolean"
+              },
+              "LucidscaleCreator": {
+                "type": "boolean"
+              },
+              "LucidscaleExplorer": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "meta": {
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": ["string", "null"]
+          },
+          "created": {
+            "type": ["string", "null"]
+          },
+          "lastModified": {
+            "type": ["string", "null"]
+          },
+          "version": {
+            "type": ["string", "null"]
+          },
+          "location": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "roles": {
+        "type": "array",
+        "items": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
