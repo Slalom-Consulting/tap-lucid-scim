@@ -10,4 +10,3 @@ class LucidScimPaginator(BaseOffsetPaginator):
         self._page_size = page_info["itemsPerPage"]
         total_results = page_info["totalResults"]
         return self.get_next(response) < total_results
-# TODO: validate paginator
