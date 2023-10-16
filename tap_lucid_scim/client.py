@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-from typing import Any, Callable, Iterable
+from typing import Any, Callable
 from memoization import cached
 import requests
 from singer_sdk.authenticators import BearerTokenAuthenticator
 from singer_sdk.streams import RESTStream
+from urllib.parse import parse_qsl
 
 from tap_lucid_scim.pagination import LucidScimPaginator
 
@@ -66,6 +66,16 @@ class LucidScimStream(RESTStream):
         """
         return LucidScimPaginator(start_value=1, page_size=0)
 
+    def get_stream_config(self) -> dict:
+        """Get config for stream."""
+        stream_configs = self.config.get("stream_config", {})
+        return stream_configs.get(self.name, {})
+
+    def get_stream_params(self) -> dict:
+        """Get parameters set in config for stream."""
+        stream_params = self.get_stream_config().get("parameters", "") or ""
+        return {qry[0]: qry[1] for qry in parse_qsl(stream_params.lstrip("?"))}
+
     def get_url_params(
         self,
         context: dict | None,  # noqa: ARG002
@@ -80,7 +90,7 @@ class LucidScimStream(RESTStream):
         Returns:
             A dictionary of URL query parameters.
         """
-        params = {}
+        params = self.get_stream_params()
 
         if next_page_token:
             params["startIndex"] = next_page_token
@@ -90,52 +100,3 @@ class LucidScimStream(RESTStream):
             params["count"] = count
 
         return params
-
-
-#    def prepare_request_payload(
-#        self,
-#        context: dict | None,  # noqa: ARG002
-#        next_page_token: Any | None,  # noqa: ARG002, ANN401
-#    ) -> dict | None:
-#        """Prepare the data payload for the REST API request.
-#
-#        By default, no payload will be sent (return None).
-#
-#        Args:
-#            context: The stream context.
-#            next_page_token: The next page index or value.
-#
-#        Returns:
-#            A dictionary with the JSON body for a POST requests.
-#        """
-#        # TODO: Delete this method if no payload is required. (Most REST APIs.)
-#        return None
-#
-#    def parse_response(self, response: requests.Response) -> Iterable[dict]:
-#        """Parse the response and return an iterator of result records.
-#
-#        Args:
-#            response: The HTTP ``requests.Response`` object.
-#
-#        Yields:
-#            Each record from the source.
-#        """
-#        # TODO: Parse response body and return a set of records.
-#        yield from extract_jsonpath(self.records_jsonpath, input=response.json())
-#
-#    def post_process(
-#        self,
-#        row: dict,
-#        context: dict | None = None,  # noqa: ARG002
-#    ) -> dict | None:
-#        """As needed, append or transform raw data to match expected structure.
-#
-#        Args:
-#            row: An individual record from the stream.
-#            context: The stream context.
-#
-#        Returns:
-#            The updated record dictionary, or ``None`` to skip the record.
-#        """
-#        # TODO: Delete this method if not needed.
-#        return row
