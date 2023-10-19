@@ -1,116 +1,681 @@
 {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": ["string", "null"]
-      },
-      "schemas": {
-        "type": "array",
-        "items": {
-          "type": ["string", "null"]
-        }
-      },
-      "userName": {
-        "type": ["string", "null"]
-      },
-      "name": {
-        "type": "object",
-        "properties": {
-          "formatted": {
-            "type": ["string", "null"]
-          },
-          "givenName": {
-            "type": ["string", "null"]
-          },
-          "familyName": {
-            "type": ["string", "null"]
+  "type": [
+    "object",
+    "null"
+  ],
+  "properties": {
+    "urn:lucidchart:schemas:1.0:User": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "canEdit": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "addOns": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "items": {}
           }
         }
-      },
-      "displayName": {
-        "type": ["string", "null"]
-      },
-      "emails": {
-        "type": "array",
-        "items": {
-          "type": "object",
+      }
+    },
+    "displayName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "roles": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "items": {}
+      }
+    },
+    "canEdit": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "active": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "groups": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "display": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "userName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "emails": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "primary": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "resourceType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastModified": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "schemas": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "name": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "formatted": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "givenName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "familyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "urn:ietf:params:scim:schemas:extension:lucid:1.0:User": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "billingCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productLicenses": {
+          "type": [
+            "object",
+            "null"
+          ],
           "properties": {
-            "value": {
-              "type": ["string", "null"]
+            "Lucidchart": {
+              "type": [
+                "boolean",
+                "null"
+              ]
             },
-            "primary": {
-              "type": "boolean"
+            "Lucidspark": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "LucidscaleCreator": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "LucidscaleExplorer": {
+              "type": [
+                "boolean",
+                "null"
+              ]
             }
           }
+        },
+        "officeIdAtPrintVendor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "userIdAtPrintVendor": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
-      },
-      "groups": {
-        "type": "array",
-        "items": {
-          "type": "object",
+      }
+    },
+    "urn:ietf:params:scim:schemas:extension:lucid:2.0:User": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "billingCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productLicenses": {
+          "type": [
+            "object",
+            "null"
+          ],
           "properties": {
-            "display": {
-              "type": ["string", "null"]
+            "Lucidchart": {
+              "type": [
+                "boolean",
+                "null"
+              ]
             },
-            "value": {
-              "type": ["string", "null"]
+            "Lucidspark": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "LucidscaleCreator": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "LucidscaleExplorer": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "CloudInsights": {
+              "type": [
+                "boolean",
+                "null"
+              ]
             }
           }
+        },
+        "officeIdAtPrintVendor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "userIdAtPrintVendor": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
-      },
-      "active": {
-        "type": "boolean"
-      },
-      "urn:ietf:params:scim:schemas:extension:lucid:1.0:User": {
-        "type": "object",
-        "properties": {
-          "billingCode": {
-            "type": ["string", "null"]
-          },
-          "productLicenses": {
-            "type": "object",
-            "properties": {
-              "Lucidchart": {
-                "type": "boolean"
-              },
-              "Lucidspark": {
-                "type": "boolean"
-              },
-              "LucidscaleCreator": {
-                "type": "boolean"
-              },
-              "LucidscaleExplorer": {
-                "type": "boolean"
-              }
+      }
+    },
+    "urn:ietf:params:scim:schemas:extension:lucidchart:1.0:User": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "canEdit": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "addOns": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "items": {}
+          }
+        }
+      }
+    },
+    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "department": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "employeeNumber": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "manager": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "displayName": {
+              "type": [
+                "string",
+                "null"
+              ]
             }
           }
         }
       },
       "meta": {
-        "type": "object",
+        "type": [
+          "object",
+          "null"
+        ],
         "properties": {
           "resourceType": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "lastModified": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "version": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "location": {
-            "type": ["string", "null"]
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       },
-      "roles": {
-        "type": "array",
+      "schemas": {
+        "type": [
+          "array",
+          "null"
+        ],
         "items": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "name": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "formatted": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "givenName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "familyName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "urn:ietf:params:scim:schemas:extension:lucid:1.0:User": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "billingCode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "productLicenses": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "Lucidchart": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "Lucidspark": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "LucidscaleCreator": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "LucidscaleExplorer": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          },
+          "officeIdAtPrintVendor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userIdAtPrintVendor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "addresses": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "primary": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "locality": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "region": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "postalCode": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      },
+      "externalId": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "locale": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "urn:ietf:params:scim:schemas:extension:lucid:2.0:User": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "billingCode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "productLicenses": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "Lucidchart": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "Lucidspark": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "LucidscaleCreator": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "LucidscaleExplorer": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "CloudInsights": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          },
+          "officeIdAtPrintVendor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "userIdAtPrintVendor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "addresses": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "primary": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "locality": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "postalCode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
+    },
+    "externalId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "locale": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   }
+}
