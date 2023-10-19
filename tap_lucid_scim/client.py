@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 from typing import Any, Callable
-from memoization import cached
+from urllib.parse import parse_qsl
+
 import requests
+from memoization import cached
 from singer_sdk.authenticators import BearerTokenAuthenticator
 from singer_sdk.streams import RESTStream
-from urllib.parse import parse_qsl
 
 from tap_lucid_scim.pagination import LucidScimPaginator
 
@@ -66,7 +67,7 @@ class LucidScimStream(RESTStream):
         """
         return LucidScimPaginator(start_value=1, page_size=0)
 
-    #TODO: add backoff
+    # TODO: add backoff
     # https://lucidchart.zendesk.com/hc/en-us/community/posts/8678361152020-Rate-Limit-for-Lucid-chart-SCIM-API-s
     # 100 request/minute limit with 429 code
 

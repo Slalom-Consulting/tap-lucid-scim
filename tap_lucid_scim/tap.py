@@ -36,10 +36,10 @@ class TapLucidScim(Tap):
             description="Custom configuration for streams.",
         ),
         th.Property(
-            'page_size',
+            "page_size",
             th.IntegerType,
             default=None,
-            description='Result limit for paginated streams'
+            description="Result limit for paginated streams",
         ),
         th.Property(
             "api_url",
@@ -56,7 +56,7 @@ class TapLucidScim(Tap):
             A list of discovered streams.
         """
         return [
-        #    streams.GroupsStream(self),
+            #    streams.GroupsStream(self),
             streams.UsersStream(self),
         ]
 

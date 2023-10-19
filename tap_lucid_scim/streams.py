@@ -5,7 +5,6 @@ from __future__ import annotations
 import typing as t
 from pathlib import Path
 
-
 from tap_lucid_scim.client import LucidScimStream
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
@@ -21,7 +20,7 @@ class UsersStream(LucidScimStream):
     schema_filepath = SCHEMAS_DIR / "users.json"  # noqa: ERA001
 
 
-#class GroupsStream(LucidScimStream):
+# class GroupsStream(LucidScimStream):
 #    """Define custom stream."""
 #
 #    name = "groups"
@@ -30,7 +29,7 @@ class UsersStream(LucidScimStream):
 #    replication_key = None
 #    schema_filepath = SCHEMAS_DIR / "groups.json"  # noqa: ERA001
 
-#class GroupsStream(LucidScimSchemas):
+# class GroupsStream(LucidScimSchemas):
 #    """Define custom stream."""
 #
 #    name = "schemas"
