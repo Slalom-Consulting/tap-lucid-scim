@@ -66,6 +66,10 @@ class LucidScimStream(RESTStream):
         """
         return LucidScimPaginator(start_value=1, page_size=0)
 
+    #TODO: add backoff
+    # https://lucidchart.zendesk.com/hc/en-us/community/posts/8678361152020-Rate-Limit-for-Lucid-chart-SCIM-API-s
+    # 100 request/minute limit with 429 code
+
     def get_stream_config(self) -> dict:
         """Get config for stream."""
         stream_configs = self.config.get("stream_config", {})
