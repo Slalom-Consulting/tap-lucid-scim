@@ -29,3 +29,12 @@ class UsersStream(LucidScimStream):
 #    primary_keys: t.ClassVar[list[str]] = ["id"]
 #    replication_key = None
 #    schema_filepath = SCHEMAS_DIR / "groups.json"  # noqa: ERA001
+
+#class GroupsStream(LucidScimSchemas):
+#    """Define custom stream."""
+#
+#    name = "schemas"
+#    path = "/Schemas"
+#    primary_keys: t.ClassVar[list[str]] = ["id"]
+#    replication_key = None
+#    schema_filepath = SCHEMAS_DIR / "groups.json"  # noqa: ERA001
