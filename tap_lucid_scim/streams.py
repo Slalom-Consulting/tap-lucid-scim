@@ -11,29 +11,20 @@ SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
 
 class UsersStream(LucidScimStream):
-    """Define custom stream."""
+    """Users stream."""
 
     name = "users"
     path = "/Users"
     primary_keys: t.ClassVar[list[str]] = ["id"]
     replication_key = None
-    schema_filepath = SCHEMAS_DIR / "users.json"  # noqa: ERA001
+    schema_filepath = SCHEMAS_DIR.joinpath("users.json")
 
 
-# class GroupsStream(LucidScimStream):
-#    """Define custom stream."""
-#
-#    name = "groups"
-#    path = "/Groups"
-#    primary_keys: t.ClassVar[list[str]] = ["id"]
-#    replication_key = None
-#    schema_filepath = SCHEMAS_DIR / "groups.json"  # noqa: ERA001
+class GroupsStream(LucidScimStream):
+    """Groups stream."""
 
-# class GroupsStream(LucidScimSchemas):
-#    """Define custom stream."""
-#
-#    name = "schemas"
-#    path = "/Schemas"
-#    primary_keys: t.ClassVar[list[str]] = ["id"]
-#    replication_key = None
-#    schema_filepath = SCHEMAS_DIR / "groups.json"  # noqa: ERA001
+    name = "groups"
+    path = "/Groups"
+    primary_keys: t.ClassVar[list[str]] = ["id"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR.joinpath("groups.json")
