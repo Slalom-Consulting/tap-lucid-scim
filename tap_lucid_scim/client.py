@@ -22,8 +22,7 @@ class LucidScimStream(RESTStream):
     def url_base(self) -> str:
         """Return the API URL root, configurable via tap settings."""
         api_url = "https://users.lucid.app/scim/v2"
-        url = self.config.get("api_url", api_url)
-        return url
+        return self.config.get("api_url", api_url)
 
     records_jsonpath = "$.Resources[*]"
 
@@ -60,16 +59,13 @@ class LucidScimStream(RESTStream):
         then you can remove this method.
 
         If you need custom pagination that uses page numbers, "next" links, or
-        other approaches, please read the guide: https://sdk.meltano.com/en/v0.25.0/guides/pagination-classes.html.
+        other approaches, please read the guide: \
+            https://sdk.meltano.com/en/v0.25.0/guides/pagination-classes.html.
 
         Returns:
             A pagination helper instance.
         """
         return LucidScimPaginator(start_value=1, page_size=0)
-
-    # TODO: add backoff
-    # https://lucidchart.zendesk.com/hc/en-us/community/posts/8678361152020-Rate-Limit-for-Lucid-chart-SCIM-API-s
-    # 100 request/minute limit with 429 code
 
     def get_stream_config(self) -> dict:
         """Get config for stream."""
