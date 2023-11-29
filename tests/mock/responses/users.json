@@ -1,0 +1,78 @@
+{
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:ListResponse"],
+  "totalResults": 1,
+  "startIndex": 1,
+  "itemsPerPage": 1,
+  "Resources": [
+    {
+      "urn:lucidchart:schemas:1.0:User": {
+          "canEdit": true,
+          "addOns": []
+      },
+      "displayName": "example@example.com",
+      "roles": [],
+      "canEdit": true,
+      "active": true,
+      "groups": [
+          {
+              "display": "Group 1",
+              "value": "lucid-group-100002331"
+          }
+      ],
+      "userName": "example@example.com",
+      "emails": [
+          {
+              "value": "example@example.com",
+              "primary": true
+          }
+      ],
+      "urn:ietf:params:scim:schemas:extension:lucidchart:1.0:User": {
+          "canEdit": true,
+          "addOns": []
+      },
+      "meta": {
+          "resourceType": "User",
+          "created": "2021-03-02T00:08:17Z",
+          "lastModified": "2022-01-12T21:51:33Z",
+          "version": "W/\"1642024293000\"",
+          "location": "https://users.lucid.app/scim/v2/chart/Users/lucid-1234"
+      },
+      "schemas": [
+          "urn:ietf:params:scim:schemas:core:2.0:User",
+          "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+          "urn:lucidchart:schemas:1.0:User",
+          "urn:ietf:params:scim:schemas:extension:lucidchart:1.0:User",
+          "urn:ietf:params:scim:schemas:extension:lucid:1.0:User",
+          "urn:ietf:params:scim:schemas:extension:lucid:2.0:User"
+      ],
+      "name": {
+          "formatted": "Jane Doe",
+          "givenName": "Jane",
+          "familyName": "Doe"
+      },
+      "urn:ietf:params:scim:schemas:extension:lucid:1.0:User": {
+          "billingCode": null,
+          "productLicenses": {
+              "Lucidchart": true,
+              "Lucidspark": true,
+              "LucidscaleCreator": false,
+              "LucidscaleExplorer": false
+          },
+          "officeIdAtPrintVendor": null,
+          "userIdAtPrintVendor": null
+      },
+      "urn:ietf:params:scim:schemas:extension:lucid:2.0:User": {
+          "billingCode": null,
+          "productLicenses": {
+              "Lucidchart": true,
+              "Lucidspark": true,
+              "LucidscaleCreator": false,
+              "LucidscaleExplorer": false
+          },
+          "officeIdAtPrintVendor": null,
+          "userIdAtPrintVendor": null
+      },
+      "id": "lucid-1234"
+    }
+  ]
+}
