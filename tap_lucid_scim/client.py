@@ -15,14 +15,16 @@ from tap_lucid_scim.pagination import LucidScimPaginator
 _Auth = Callable[[requests.PreparedRequest], requests.PreparedRequest]
 
 
+API_URL = "https://users.lucid.app/scim/v2"
+
+
 class LucidScimStream(RESTStream):
     """LucidScim stream class."""
 
     @property
     def url_base(self) -> str:
         """Return the API URL root, configurable via tap settings."""
-        api_url = "https://users.lucid.app/scim/v2"
-        return self.config.get("api_url", api_url)
+        return self.config.get("api_url", API_URL)
 
     records_jsonpath = "$.Resources[*]"
 
