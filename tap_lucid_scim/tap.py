@@ -38,7 +38,7 @@ class TapLucidScim(Tap):
         th.Property(
             "page_size",
             th.IntegerType,
-            default=None,
+            default=500,
             description="Result limit for paginated streams",
         ),
         th.Property(
